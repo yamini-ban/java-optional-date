@@ -33,22 +33,26 @@ public class AppDriver {
         ZoneTimeService zoneTimeService = new ZoneTimeService();
         SecondsAManLived secondsAManLived = new SecondsAManLived();
         LeapYearService leapYearService = new LeapYearService();
+        FileService fileService = new FileService();
 
         LocalDateTime birthDate = LocalDateTime.of(2020, 1, 1, 12, 12, 12);
         LocalDateTime deathDate = LocalDateTime.of(2020, 1, 2, 12, 12, 12);
         LocalDate republicDate = LocalDate.of(1950, 1, 26);
+        String filePath = "./src/main/resources/sample.txt";
 
-        System.out.println("***********1.1************");
-        System.out.println(studentService.getStudentsWithNoSecondaryAddress(listOfStudents));
-        System.out.println("************1.2***********");
-        System.out.println(studentService.getStudentsWithInitialOfUserAndNoSecAddress(listOfStudents, "y"));
-        System.out.println("************2**********");
-        System.out.println(dateService.getListBirthDateDay(LocalDate.of(1996, 9, 20)));
-        System.out.println("************3***********");
-        System.out.println(zoneTimeService.getZonedTime("America/New_York"));
-        System.out.println("*************4**********");
-        System.out.println(secondsAManLived.getSecondsAManLived(birthDate, deathDate));
-        System.out.println("*************5**********");
-        System.out.println(leapYearService.getAllLeapYear(republicDate));
+//        System.out.println("***********1.1************");
+//        System.out.println(studentService.getStudentsWithNoSecondaryAddress(listOfStudents));
+//        System.out.println("************1.2***********");
+//        System.out.println(studentService.getStudentsWithInitialOfUserAndNoSecAddress(listOfStudents, "y"));
+//        System.out.println("************2**********");
+//        System.out.println(dateService.getListBirthDateDay(LocalDate.of(1996, 9, 20)));
+//        System.out.println("************3***********");
+//        System.out.println(zoneTimeService.getZonedTime("America/New_York"));
+//        System.out.println("*************4**********");
+//        System.out.println(secondsAManLived.getSecondsAManLived(birthDate, deathDate));
+//        System.out.println("*************5**********");
+//        System.out.println(leapYearService.getAllLeapYear(republicDate));
+        System.out.println("*************6**********");
+        System.out.println(fileService.getWordsOccurrences(filePath));
     }
 }

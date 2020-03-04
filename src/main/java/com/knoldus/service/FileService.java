@@ -15,41 +15,19 @@ import static java.util.Arrays.stream;
 
 public class FileService {
     public Map<String, Integer> getWordsOccurrences(String filePath) {
+        Map<String, Integer> countOfWords = Collections.emptyMap();
         try {
             Stream<String> lines = Files.lines(Paths.get(filePath));
-//            lines.reduce(Collections.<String, Integer>emptyMap(), (acc, line) -> {
-//                Stream<String> words = Arrays.stream(line.split(" "));
-//                words.(Collections.<String, Integer>emptyMap(), (localWordCountInLine, word) -> {
-//                    if(localWordCountInLine.c)
-//                });
-//            });
-            Map<String, Integer> totalCount = Collections.emptyMap();
-
-            lines.map(line -> {
-                Stream<String> words = Arrays.stream(line.split(" "));
-                Map<String, Integer> localCount = Collections.emptyMap();
-                words.map(word -> {
-                    if(totalCount.containsKey(word) && !(localCount.containsKey(word))) {
-                        totalCount.put(word, totalCount.get(word) + getCountOfWordInALine(word, line));
-                    }
-                    else if(!(totalCount.containsKey(word)) && localCount.containsKey(word)) {
-                        totalCount.put(word, getCountOfWordInALine(word, line));
-                    }
-                    else {
-
-                    }
-                });
-            });
-        }
-        catch (IOException e) {
+            Stream<String> words = lines.flatMap(line -> stream(line.split(" ")));
+        } catch (IOException e) {
             System.out.println("File do not exist.");
         }
-
+        return countOfWords;
     }
 
     Integer getCountOfWordInALine(String word, String line) {
         List<String> listOfWords = Arrays.asList(line.split(" "));
         long count = listOfWords.stream().filter(str -> str.equals(word)).count();
-        return (Integer)(int)count;
+        return (Integer) (int) count;
     }
 }
