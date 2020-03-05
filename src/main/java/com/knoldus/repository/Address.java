@@ -29,9 +29,12 @@ public class Address {
 
     @Override
     public String toString() {
-        return "Address{" +
-                "primaryAddress='" + primaryAddress + '\'' +
-                ", secondaryAddress=" + secondaryAddress.orElseGet(() -> "N.A") +
-                '}';
+        return "Address{"
+                + "primaryAddress='"
+                + primaryAddress
+                + '\''
+                + ", secondaryAddress="
+                + secondaryAddress.orElseGet(() -> "N.A")
+                + '}';
     }
 }

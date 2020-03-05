@@ -40,19 +40,19 @@ public class AppDriver {
         LocalDate republicDate = LocalDate.of(1950, 1, 26);
         String filePath = "./src/main/resources/sample.txt";
 
-//        System.out.println("***********1.1************");
-//        System.out.println(studentService.getStudentsWithNoSecondaryAddress(listOfStudents));
-//        System.out.println("************1.2***********");
-//        System.out.println(studentService.getStudentsWithInitialOfUserAndNoSecAddress(listOfStudents, "y"));
-//        System.out.println("************2**********");
-//        System.out.println(dateService.getListBirthDateDay(LocalDate.of(1996, 9, 20)));
-//        System.out.println("************3***********");
-//        System.out.println(zoneTimeService.getZonedTime("America/New_York"));
-//        System.out.println("*************4**********");
-//        System.out.println(secondsAManLived.getSecondsAManLived(birthDate, deathDate));
-//        System.out.println("*************5**********");
-//        System.out.println(leapYearService.getAllLeapYear(republicDate));
-        System.out.println("*************6**********");
+        System.out.println("***********1.1************\n");
+        System.out.println(studentService.getStudentsWithNoSecondaryAddress(listOfStudents));
+        System.out.println("\n************1.2***********\n");
+        System.out.println(studentService.getStudentsWithInitialOfUserAndNoSecAddress(listOfStudents, "y"));
+        System.out.println("\n************2**********\n");
+        System.out.println(dateService.getListBirthDateDay(LocalDate.of(1996, 9, 20)));
+        System.out.println("\n************3***********\n");
+        System.out.println(zoneTimeService.getZonedTime("America/New_York"));
+        System.out.println("\n*************4**********\n");
+        System.out.println(secondsAManLived.getSecondsAManLived(birthDate, deathDate));
+        System.out.println("\n*************5**********\n");
+        System.out.println(leapYearService.getAllLeapYear(republicDate));
+        System.out.println("\n*************6**********\n");
         System.out.println(fileService.getWordsOccurrences(filePath));
     }
 }
